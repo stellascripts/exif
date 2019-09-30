@@ -1,9 +1,12 @@
-#EXIF
-####Easy Xml Interactive Fiction
+EXIF
+====
+**Easy Xml Interactive Fiction**
+
 EXIF is a small project made for the purposes of laying out simple interactive fiction as
 part of XML files, to be displayed in the browser.
 
-##EXIF Setup
+EXIF Setup
+----------
 To operate properly in an HTML document:
  * The scripts 'kotlin.js' and 'exif.js' must be loaded, in that order.
  * There must exist elements with classes:
@@ -13,7 +16,8 @@ To operate properly in an HTML document:
    * exif-text
    * exif-buttons
 
-##EXIF Tags
+EXIF Tags
+---------
     <block if-set='*' if-clear='*' trip='*'>
 The block is the main execution element of an EXIF XML file. All tags within the block
 are executed in sequence. Blocks which occur inside other blocks are executed, if:
