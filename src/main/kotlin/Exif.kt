@@ -4,11 +4,6 @@ import org.w3c.dom.NodeList
 import org.w3c.dom.get
 import org.w3c.xhr.XMLHttpRequest
 
-/**
- * Annotation indicating exported functions.
- */
-annotation class Out
-
 internal fun <T> ArrayList<T>.push(t: T) {
     this.add(t)
 }
@@ -141,7 +136,6 @@ class Interpreter {
      * Loads a new file and starts it at the indicated block.
      */
     @JsName("load")
-    @Out
     fun load(file: String, block: String? = null) {
         loadDocument(exifFetch(file))
         if(block != null) call(block)
@@ -166,7 +160,6 @@ class Interpreter {
      * Starts execution of the current EXIF block.
      */
     @JsName("play")
-    @Out
     fun play() {
         while(step() && !isPaused) {}
     }
@@ -175,7 +168,6 @@ class Interpreter {
      * Goes through one step of the current EXIF block.
      */
     @JsName("step")
-    @Out
     fun step(): Boolean {
         val frame = stack.peek()
         val ele = frame.nextItem()
@@ -219,7 +211,6 @@ class Interpreter {
      * Resumes execution of the current EXIF block after making a selection.
      */
     @JsName("resume")
-    @Out
     fun resume() {
         isPaused = false
         if(appendToDesc != null) {
@@ -233,7 +224,6 @@ class Interpreter {
      * Selects an option from a <choice> EXIF instruction and resumes execution.
      */
     @JsName("choose")
-    @Out
     fun choose(label: String) {
         val option = options[label]
         if(option != null) {
