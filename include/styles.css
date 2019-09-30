@@ -1,0 +1,33 @@
+
+div {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#vision { background-color: #aaa }
+#vision-title { font-size: 24pt; font-style: bold }
+#vision-desc {
+    font-style: italic;
+}
+
+#conversation { 
+    border-width: 5px;
+    border-style: double;
+}
+#conv-speaker { 
+    font-size: 16pt;
+    font-style: bold;
+    padding-left: 5px;
+}
+#conv-text { 
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    height: 80px;
+}
+#interaction { 
+    font-size: 14pt 
+}

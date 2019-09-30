@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>EXIF</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0"/>
+    <script src="js/kotlin.js"></script>
+    <script src="js/exif.js"></script>
+</head>
+<body>
+    <div id="vision">
+        <span id="vision-title" class="exif-title"></span>
+        <div id="vision-desc" class="exif-desc"></div>
+    </div>
+    <div id="conversation">
+        <span id="conv-speaker" class="exif-speaker"></span>
+        <div id="conv-text" class="exif-text"></div>
+        <div id="interaction" class="exif-buttons"></div>
+    </div>
+    <script>
+        var interpreter = new exif.Interpreter()
+        interpreter.load("exif/example.xml")
+        interpreter.play()
+    </script>
+</body>
+</html>

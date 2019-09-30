@@ -1,0 +1,53 @@
+<file>
+    <block id="start">
+        <clear-screen />
+        <title>Chamber of EXIF</title>
+        <to-description>
+            <text>
+                You are standing in a vast, dark space. There is an elaborate
+                description of the chamber here. Also here is a Stella.
+            </text>
+            <block if-set="looped-once">
+                <text>
+                    This seems paradoxically familiar.
+                </text>
+            </block>
+        </to-description>
+
+        <Stella>Hi!</Stella>
+        <choice>
+            <option of="Say Hello">
+                <text>
+                    You say hello to Stella.
+                </text>
+                <Stella>
+                    Hello! The next time you see me, say 'I am a jelly donut!'
+                </Stella>
+                <flag set="knows-secret" />
+            </option>
+            <option of="Ignore Stella">
+                <text>
+                    You ignore Stella.
+                </text>
+            </option>
+            <option of="Secret Code Phrase" if-set="knows-secret">
+                <text>
+                    You tell Stella the secret code phrase.
+                </text>
+                <call block="secret-code" />
+                <Stella>Wonderful! Have fun with EXIF!</Stella>
+                <goto block="end"/>
+            </option>
+        </choice>
+        <flag set="looped-once"/>
+        <goto block="start"/>
+    </block>
+    <block id="end">
+        <text>And everyone lived happily ever after.</text>
+    </block>
+    <block id="secret-code">
+        <text speaker="Nameless Protagonist">
+            I am a jelly donut.
+        </text>
+    </block>
+</file>
